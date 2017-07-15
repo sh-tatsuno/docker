@@ -1,0 +1,14 @@
+version: '2'
+services:
+  app:
+    build: pytorch_example/.
+    mem_limit: 4G
+    ports:
+      - '8888:8888'
+    volumes:
+      - ./mounts:/notebooks
+    tty: true
+
+volumes:
+  mysql-data:
+    driver: local
